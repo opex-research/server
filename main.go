@@ -39,9 +39,9 @@ func main() {
 	// configs
 	HostAddr := "localhost"
 	HostPort := "8081"
-	PathCaCrt := "../certs/certificates/ca.crt"
-	PathServerPem := "../certs/certificates/server.pem"
-	PathServerKey := "../certs/certificates/server.key"
+	PathCaCrt := "certs/certificates/ca.crt"
+	PathServerPem := "certs/certificates/server.pem"
+	PathServerKey := "certs/certificates/server.key"
 	UrlPath := "/my-btc-usdt-order"
 
 	// parse certificate configs
