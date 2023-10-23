@@ -123,7 +123,7 @@ func response(w http.ResponseWriter, r *http.Request) {
 	// serialize JSON to bytes
 	bytePresentation, err := json.Marshal(message)
 	if err != nil {
-		log.Println("Error serializing message:", err)
+		log.Error().Err(err).Msg("json.Marshal")
 		return
 	}
 
@@ -141,7 +141,7 @@ func response(w http.ResponseWriter, r *http.Request) {
 	// re-serialize the message with dummy data
 	bytePresentationWithDummyData, err := json.Marshal(message)
 	if err != nil {
-		log.Println("Error serializing message with dummy data:", err)
+		log.Error().Err(err).Msg("Error serializing message with dummy data")
 		return
 	}
 
@@ -150,6 +150,6 @@ func response(w http.ResponseWriter, r *http.Request) {
 
 	// measure elapsed response time
 	elapsed := time.Since(start)
-	log.Println("Local server response time took:", elapsed.String())
+	log.Debug().Str("time", elapsed.String()).Msg("local server response time took.")
 
 }
